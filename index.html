@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monser Games Control Panel - Monser DM</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-gaming-theme">
+    <div class="gaming-bg"></div>
+    <div class="admin-panel">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="logo-content">
+                        <span class="logo-text">Monser Games</span>
+                        <span class="logo-subtitle">Control Panel</span>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <div class="server-status">
+                        <span class="status-indicator"></span>
+                        <span class="status-text">Загрузка...</span>
+                    </div>
+                    <div class="online-stats">
+                        <i class="fas fa-users"></i>
+                        <span>Онлайн: <span id="online-count">0</span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="server-switcher" id="server-switcher">
+                    <select id="server-select" class="gaming-select">
+                        <option value="One">Server One</option>
+                        <option value="Two">Server Two</option>
+                        <option value="Three">Server Three</option>
+                    </select>
+                </div>
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div class="user-details">
+                        <span class="username">Загрузка...</span>
+                        <span class="user-role">Загрузка...</span>
+                    </div>
+                </div>
+                <button class="logout-btn gaming-btn-danger">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Выйти</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="navigation">
+            <div class="nav-container">
+                <button class="nav-item active" data-page="admins">
+                    <i class="fas fa-users-cog"></i>
+                    <span>Администраторы</span>
+                </button>
+                <button class="nav-item" data-page="logs">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Действия</span>
+                </button>
+                <button class="nav-item" data-page="reputation">
+                    <i class="fas fa-star"></i>
+                    <span>Репутация</span>
+                </button>
+                <button class="nav-item" data-page="names">
+                    <i class="fas fa-history"></i>
+                    <span>История никнеймов</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Admins Page -->
+            <div id="admins-page" class="page active">
+                <div class="page-header">
+                    <h1><i class="fas fa-crown"></i> Управление администраторами</h1>
+                    <p class="page-subtitle">Полный контроль над командой администрации</p>
+                </div>
+
+                <div class="controls gaming-panel">
+                    <div class="search-controls">
+                        <div class="gaming-input-group">
+                            <input type="text" placeholder="Поиск администратора..." class="gaming-input" id="adminSearchInput">
+                            <button class="gaming-btn gaming-btn-primary">
+                                <i class="fas fa-search"></i>
+                                <span>Найти</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-grid">
+                    <!-- Данные будут загружены через JavaScript -->
+                </div>
+            </div>
+
+            <!-- Logs Page -->
+            <div id="logs-page" class="page">
+                <div class="page-header">
+                    <h1><i class="fas fa-scroll"></i> Действия администрации</h1>
+                    <p class="page-subtitle">Мониторинг всех административных команд</p>
+                </div>
+
+                <div class="controls gaming-panel">
+                    <div class="filter-controls">
+                        <input type="text" placeholder="Администратор" class="gaming-input" id="adminFilter">
+                        <input type="text" placeholder="Игрок" class="gaming-input" id="playerFilter">
+                        <input type="text" placeholder="Команда" class="gaming-input" id="cmdFilter">
+                        <input type="text" placeholder="Причина" class="gaming-input" id="reasonFilter">
+                        <button class="gaming-btn gaming-btn-primary">
+                            <i class="fas fa-search"></i>
+                            <span>Найти</span>
+                        </button>
+                    </div>
+                    <button class="gaming-btn gaming-btn-secondary">
+                        <i class="fas fa-download"></i>
+                        <span>Скачать</span>
+                    </button>
+                </div>
+
+                <div class="table-container gaming-panel">
+                    <table class="gaming-table">
+                        <thead>
+                            <tr>
+                                <th>АДМИН</th>
+                                <th>ИГРОК</th>
+                                <th>КОМАНДА</th>
+                                <th>ПРИЧИНА</th>
+                                <th>СРОК</th>
+                                <th>ВРЕМЯ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Данные будут загружены через JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <!-- Пагинация будет добавлена через JavaScript -->
+                </div>
+            </div>
+
+            <!-- Reputation Page -->
+            <div id="reputation-page" class="page">
+                <div class="page-header">
+                    <h1><i class="fas fa-medal"></i> Система репутации</h1>
+                    <p class="page-subtitle">Мониторинг репутационной системы игроков</p>
+                </div>
+
+                <div class="controls gaming-panel">
+                    <div class="filter-controls">
+                        <input type="text" placeholder="От кого" class="gaming-input" id="fromFilter">
+                        <input type="text" placeholder="Кому" class="gaming-input" id="toFilter">
+                        <input type="text" placeholder="Комментарий" class="gaming-input" id="commentFilter">
+                        <button class="gaming-btn gaming-btn-primary">
+                            <i class="fas fa-search"></i>
+                            <span>Найти</span>
+                        </button>
+                    </div>
+                    <button class="gaming-btn gaming-btn-secondary">
+                        <i class="fas fa-download"></i>
+                        <span>Скачать</span>
+                    </button>
+                </div>
+
+                <div class="table-container gaming-panel">
+                    <table class="gaming-table">
+                        <thead>
+                            <tr>
+                                <th>ИГРОК</th>
+                                <th>ИГРОКУ</th>
+                                <th>РЕПУТАЦИЯ</th>
+                                <th>КОММЕНТАРИЙ</th>
+                                <th>ЗАБЛОКИРОВАН</th>
+                                <th>ДАТА</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Данные будут загружены через JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <!-- Пагинация будет добавлена через JavaScript -->
+                </div>
+            </div>
+
+            <!-- Names Page -->
+            <div id="names-page" class="page">
+                <div class="page-header">
+                    <h1><i class="fas fa-id-card"></i> История никнеймов</h1>
+                    <p class="page-subtitle">Отслеживание изменений никнеймов игроков</p>
+                </div>
+
+                <div class="controls gaming-panel">
+                    <div class="filter-controls">
+                        <input type="text" placeholder="ID аккаунта" class="gaming-input" id="accountFilter">
+                        <input type="text" placeholder="Старый никнейм" class="gaming-input" id="beforeFilter">
+                        <input type="text" placeholder="Новый никнейм" class="gaming-input" id="afterFilter">
+                        <input type="text" placeholder="Администратор" class="gaming-input" id="adminNamesFilter">
+                        <button class="gaming-btn gaming-btn-primary">
+                            <i class="fas fa-search"></i>
+                            <span>Найти</span>
+                        </button>
+                    </div>
+                    <button class="gaming-btn gaming-btn-secondary">
+                        <i class="fas fa-download"></i>
+                        <span>Скачать</span>
+                    </button>
+                </div>
+
+                <div class="table-container gaming-panel">
+                    <table class="gaming-table">
+                        <thead>
+                            <tr>
+                                <th>АККАУНТ</th>
+                                <th>НИКНЕЙМ ДО</th>
+                                <th>ПОСЛЕ</th>
+                                <th>АДМИНИСТРАТОР</th>
+                                <th>ДАТА</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Данные будут загружены через JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <!-- Пагинация будет добавлена через JavaScript -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer with credits -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="credits">
+                    <span>dev.by</span>
+                    <a href="https://exfil-dev.ru" target="_blank" class="dev-link">
+                        <i class="fas fa-code"></i>
+                        exfil-dev.ru
+                    </a>
+                </div>
+                <div class="version-info">
+                    <span>Monser DM Control Panel v4.0</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
